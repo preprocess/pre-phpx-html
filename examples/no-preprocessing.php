@@ -2,8 +2,6 @@
 
 require __DIR__ . "/../vendor/autoload.php";
 
-\Pre\Plugin\addCompiler("examples", "\Pre\Phpx\Parser::compile");
-
 print \Pre\Phpx\Html\render("a", [
     "className" => ["one", "two", function () {
         return "three";
