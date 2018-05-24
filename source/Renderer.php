@@ -738,4 +738,9 @@ class Renderer
         $indenter = new Indenter();
         return $indenter->indent($markup);
     }
+
+    public function supports($name)
+    {
+        return in_array($name, $this->allowedTags);
+    }
 }

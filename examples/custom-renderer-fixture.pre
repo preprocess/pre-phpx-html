@@ -4,9 +4,11 @@ namespace Pre\Phpx\Html\Example
 {
     // use function Pre\Phpx\Html\render;
 
+    use Exception;
     use function Pre\Phpx\classMatching;
     use function Pre\Phpx\functionMatching;
     use function Pre\Phpx\Html\render as renderHtml;
+    use function Pre\Phpx\Html\supports as supportsHtml;
     use function Pre\Phpx\Html\propsFrom;
 
     define("NAMESPACES", [
@@ -26,7 +28,11 @@ namespace Pre\Phpx\Html\Example
             return (new $class($props))->render();
         }
 
-        return renderHtml($name, $props);
+        if (supportsHtml($name)) {
+            return renderHtml($name, $props);
+        }
+
+        throw new Exception("unsupported component");
     }
 
     function MyPage($props) {

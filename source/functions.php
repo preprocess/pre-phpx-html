@@ -27,3 +27,8 @@ function format($markup)
 {
     return renderer()->format($markup);
 }
+
+function supports($name)
+{
+    return renderer()->supports($name);
+}
