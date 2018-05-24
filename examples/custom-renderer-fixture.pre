@@ -1,0 +1,53 @@
+<?php
+
+namespace Pre\Phpx\Html\Example
+{
+    // use function Pre\Phpx\Html\render;
+
+    use function Pre\Phpx\classMatching;
+    use function Pre\Phpx\functionMatching;
+    use function Pre\Phpx\Html\render as renderHtml;
+    use function Pre\Phpx\Html\propsFrom;
+
+    define("NAMESPACES", [
+        "global",
+        "Pre\\Phpx\\Html\\Example",
+    ]);
+
+    function render($name, $props = null)
+    {
+        $props = propsFrom($props);
+        
+        if ($function = functionMatching(NAMESPACES, $name)) {
+            return call_user_func($function, $props);
+        }
+
+        if ($class = classMatching(NAMESPACES, $name)) {
+            return (new $class($props))->render();
+        }
+
+        return renderHtml($name, $props);
+    }
+
+    function MyPage($props) {
+        return <MyForm showLabel={true} />;
+    }
+}
+
+namespace
+{
+    use function Pre\Phpx\Html\Example\render;
+    /* use function Pre\Phpx\Html\render; */
+
+    function MyForm($props) {
+        return (
+            <form>
+                {$props->showLabel ? <label htmlFor={"email"}>Email</label> : null}
+                <input type={"text"} name={"email"} id={"email"} />
+            </form> 
+        );
+    }
+
+    print <MyPage />;
+    /* print <Pre.Phpx.Html.Example.MyPage />; */
+}
