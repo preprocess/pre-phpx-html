@@ -635,7 +635,7 @@ class Renderer
             return null;
         }
 
-        if (is_callable($className)) {
+        if (is_callable($className) && !is_string($className)) {
             $result = $this->classNameFrom($className(), false);
         }
     
@@ -696,7 +696,7 @@ class Renderer
     private function childrenFrom($children = null)
     {
         if (is_array($children)) {
-            return join("", $children);
+            return new Children($children);
         }
 
         return $children;
@@ -725,6 +725,10 @@ class Renderer
 
             if (is_callable($value)) {
                 $value = $value();
+            }
+
+            if (is_array($value)) {
+                $value = join(" ", $value);
             }
 
             $attributes[] = "{$key}=\"{$value}\"";
