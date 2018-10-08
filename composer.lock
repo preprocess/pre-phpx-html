@@ -4,122 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9bbabfe40ad6232a1d0e8b7b010603e",
+    "content-hash": "f01c978aa75f16bd4ad3f646a17508cb",
     "packages": [
         {
-            "name": "gajus/dindent",
-            "version": "2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/gajus/dindent.git",
-                "reference": "d81c3a6f78fbe1ab26f5e753098bbbef6b6a9f3c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/gajus/dindent/zipball/d81c3a6f78fbe1ab26f5e753098bbbef6b6a9f3c",
-                "reference": "d81c3a6f78fbe1ab26f5e753098bbbef6b6a9f3c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "require-dev": {
-                "satooshi/php-coveralls": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Gajus\\Dindent\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Gajus Kuizinas",
-                    "email": "gk@anuary.com"
-                }
-            ],
-            "description": "HTML indentation library for development and testing.",
-            "homepage": "https://github.com/gajus/dindent",
-            "keywords": [
-                "format",
-                "html",
-                "indent"
-            ],
-            "time": "2014-10-08T10:03:04+00:00"
-        },
-        {
-            "name": "nikic/php-parser",
-            "version": "v4.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "bd088dc940a418f09cda079a9b5c7c478890fb8d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/bd088dc940a418f09cda079a9b5c7c478890fb8d",
-                "reference": "bd088dc940a418f09cda079a9b5c7c478890fb8d",
-                "shasum": ""
-            },
-            "require": {
-                "ext-tokenizer": "*",
-                "php": ">=7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.5 || ^7.0"
-            },
-            "bin": [
-                "bin/php-parse"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PhpParser\\": "lib/PhpParser"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Nikita Popov"
-                }
-            ],
-            "description": "A PHP parser written in PHP",
-            "keywords": [
-                "parser",
-                "php"
-            ],
-            "time": "2018-07-15T17:25:16+00:00"
-        },
-        {
             "name": "pre/phpx",
-            "version": "0.3.0",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/preprocess/pre-phpx.git",
-                "reference": "4b17ed57f8f4b897dbd93508fb2e98e66c5ab2b6"
+                "reference": "701201845b180d528bdec0607601f8d7450b9285"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/preprocess/pre-phpx/zipball/4b17ed57f8f4b897dbd93508fb2e98e66c5ab2b6",
-                "reference": "4b17ed57f8f4b897dbd93508fb2e98e66c5ab2b6",
+                "url": "https://api.github.com/repos/preprocess/pre-phpx/zipball/701201845b180d528bdec0607601f8d7450b9285",
+                "reference": "701201845b180d528bdec0607601f8d7450b9285",
                 "shasum": ""
             },
             "require": {
-                "gajus/dindent": "^2.0",
-                "nikic/php-parser": "^4.0",
-                "pre/plugin": "^0.11.0"
+                "pre/plugin": "^0.11.3"
             },
             "require-dev": {
                 "phpunit/phpunit": "^5.0|^6.0"
@@ -142,20 +44,20 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-09-10T12:00:53+00:00"
+            "time": "2018-10-08T16:51:20+00:00"
         },
         {
             "name": "pre/plugin",
-            "version": "0.11.0",
+            "version": "0.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/preprocess/pre-plugin.git",
-                "reference": "74bf7893cea59077cca120ca73987c0297820efc"
+                "reference": "5195958886ab8ef54c444b18126081021f45f500"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/preprocess/pre-plugin/zipball/74bf7893cea59077cca120ca73987c0297820efc",
-                "reference": "74bf7893cea59077cca120ca73987c0297820efc",
+                "url": "https://api.github.com/repos/preprocess/pre-plugin/zipball/5195958886ab8ef54c444b18126081021f45f500",
+                "reference": "5195958886ab8ef54c444b18126081021f45f500",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +90,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-09-10T11:17:14+00:00"
+            "time": "2018-10-08T15:34:29+00:00"
         }
     ],
     "packages-dev": [
