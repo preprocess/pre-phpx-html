@@ -3,7 +3,6 @@
 namespace Pre\Phpx\Html;
 
 use Exception;
-use Gajus\Dindent\Indenter;
 use function Pre\Phpx\globalClassMatching;
 use function Pre\Phpx\globalFunctionMatching;
 
@@ -739,8 +738,8 @@ class Renderer
 
     public function format($markup)
     {
-        $indenter = new Indenter();
-        return $indenter->indent($markup);
+        // left to avoid a version bump
+        return $markup;
     }
 
     public function supports($name)
