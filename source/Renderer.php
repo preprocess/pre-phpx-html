@@ -12,6 +12,7 @@ class Renderer
     private $allowedTags = [
         // html
         "html",
+        "head",
         "link",
         "meta",
         "base",
