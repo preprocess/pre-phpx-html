@@ -565,16 +565,26 @@ class Renderer
         "zoomandpan" => "zoomAndPan",
     ];
 
+    private $ignoredFunctions = [
+        "link",
+    ];
+
     public function render($name, $props = null)
     {
         $props = $this->propsFrom($props);
 
-        if ($function = globalFunctionMatching($name)) {
+        if (!in_array($name, $this->ignoredFunctions) && ($function = globalFunctionMatching($name))) {
             return call_user_func($function, $props);
         }
 
         if ($class = globalClassMatching($name)) {
-            return (new $class($props))->render();
+            $instance = new $class($props);
+
+            if (is_callable($instance)) {
+                return $instance($props);
+            }
+
+            return $instance->render();
         }
 
         if (!in_array($name, $this->allowedTags)) {
