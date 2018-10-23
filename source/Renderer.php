@@ -484,6 +484,7 @@ class Renderer
 
     private $ignoredFunctions = [
         "link",
+        "header",
     ];
 
     public function render($name, $props = null)
