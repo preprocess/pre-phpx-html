@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f01c978aa75f16bd4ad3f646a17508cb",
+    "content-hash": "5498e6991529fe4cc721b995fcf3a578",
     "packages": [
         {
             "name": "pre/phpx",
-            "version": "0.3.2",
+            "version": "0.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/preprocess/pre-phpx.git",
-                "reference": "701201845b180d528bdec0607601f8d7450b9285"
+                "reference": "9d68c67e1f3844159f27b2d28ec853cf01e43d15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/preprocess/pre-phpx/zipball/701201845b180d528bdec0607601f8d7450b9285",
-                "reference": "701201845b180d528bdec0607601f8d7450b9285",
+                "url": "https://api.github.com/repos/preprocess/pre-phpx/zipball/9d68c67e1f3844159f27b2d28ec853cf01e43d15",
+                "reference": "9d68c67e1f3844159f27b2d28ec853cf01e43d15",
                 "shasum": ""
             },
             "require": {
@@ -44,7 +44,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-10-08T16:51:20+00:00"
+            "time": "2018-10-23T09:20:15+00:00"
         },
         {
             "name": "pre/plugin",
