@@ -19,16 +19,25 @@ class Children implements IteratorAggregate
 
     public function __toString()
     {
-        $result = "";
+        return $this->value($this->children);
+    }
 
-        foreach ($this->children as $child) {
-            if (is_callable($child) && !is_string($child)) {
-                $result .= $child();
-            } else {
-                $result .= $child;
-            }
+    private function value($child)
+    {
+        if (is_callable($child) && !is_string($child)) {
+            return $child();
         }
 
-        return $result;
+        if (is_array($child)) {
+            $result = "";
+
+            foreach ($child as $value) {
+                $result .= $this->value($value);
+            }
+            
+            return $result;
+        }
+
+        return $child;
     }
 }
