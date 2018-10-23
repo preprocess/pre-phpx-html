@@ -521,7 +521,7 @@ class Renderer
             $this->attributesFrom($props),
         ]));
 
-        if (in_array($name, $this->selfClosingTags)) {
+        if (in_array($name, $this->selfClosingTags) && !$children) {
             return $this->format("<{$open} />");
         }
 
