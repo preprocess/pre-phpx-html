@@ -636,7 +636,7 @@ class Renderer
                 $properKey = $this->renamedAttributes[$key];
             }
 
-            $flippedAttributes = array_flip($reversedAttributes);
+            $flippedAttributes = array_flip($this->renamedAttributes[$key]);
 
             if (isset($flippedAttributes[$properKey])) {
                 $key = $flippedAttributes[$properKey];
