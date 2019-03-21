@@ -2,6 +2,7 @@
 
 namespace Pre\Phpx\Html;
 
+use Closure;
 use Exception;
 use function Pre\Phpx\globalClassMatching;
 use function Pre\Phpx\globalFunctionMatching;
@@ -559,61 +560,65 @@ class Renderer
             return null;
         }
 
-        if (is_callable($className) && !is_string($className)) {
-            $result = $this->classNameFrom($className(), false);
-        }
-    
         if (is_string($className)) {
             $result = $className;
+        }
+
+        if ($className instanceof Closure) {
+            $result = $this->classNameFrom($className(), false);
         }
 
         if (is_array($className)) {
             $result = "";
 
-            foreach ($className as $value) {
-                $result .= $this->classNameFrom($value, false) . " ";
+            foreach ($className as $key => $value) {
+                if (is_bool($value)) {
+                    if ($value) {
+                        $result .= $this->classNameFrom($key, false) . " ";
+                    }
+                } else {
+                    $result .= $this->classNameFrom($value, false) . " ";
+                }
             }
-        
+
             $result = trim($result);
         }
 
         if ($wrapped) {
             return "class=\"{$result}\"";
         }
-    
+
         return $result;
     }
 
     private function styleFrom($style = null, $wrapped = true)
     {
-        if (is_null($style)) {
+        if (!is_array($style) && !is_object($style)) {
             return null;
         }
 
-        if (is_object($style)) {
-            $style = (array) $style;
-        }
-
-        if (!is_array($style)) {
-            throw new Exception("style must be an array or an object");
-        }
+        $style = (array) $style;
 
         $result = "";
 
         foreach ($style as $key => $value) {
-            if (is_callable($value)) {
+            if ($key instanceof Closure) {
+                $key = $key();
+            }
+
+            if ($value instanceof Closure) {
                 $value = $value();
             }
 
             $result .= "{$key}: {$value}; ";
         }
-    
+
         $result = trim($result);
 
         if ($wrapped) {
             return "style=\"{$result}\"";
         }
-    
+
         return $result;
     }
 
