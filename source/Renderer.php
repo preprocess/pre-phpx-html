@@ -648,7 +648,7 @@ class Renderer
                 $key = $flippedAttributes[$properKey];
             }
 
-            if (is_callable($value)) {
+            if ($value instanceof Closure) {
                 $value = $value();
             }
 
