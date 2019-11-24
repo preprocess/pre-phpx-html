@@ -624,7 +624,7 @@ class Renderer
 
     private function childrenFrom($children = null)
     {
-        if (is_array($children)) {
+        if (is_iterable($children)) {
             return new Children($children);
         }
 
