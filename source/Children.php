@@ -7,7 +7,7 @@ use IteratorAggregate;
 
 class Children implements IteratorAggregate
 {
-    public function __construct(array $children)
+    public function __construct(iterable $children)
     {
         $this->children = $children;
     }
@@ -28,7 +28,7 @@ class Children implements IteratorAggregate
             return $child();
         }
 
-        if (is_array($child)) {
+        if (is_iterable($child)) {
             $result = "";
 
             foreach ($child as $value) {
